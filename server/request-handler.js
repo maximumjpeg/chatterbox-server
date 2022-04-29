@@ -11,8 +11,12 @@ this file and include it in basic-server.js so that it actually works.
 *Hint* Check out the node module documentation at http://nodejs.org/api/modules.html.
 
 **************************************************************/
+var api = 'https://app-hrsei-api.herokuapp.com/api/chatterbox/messages/rfe';
+var url = require('url');
 
 var requestHandler = function(request, response) {
+  var urlParts = url.parse(request.url);
+  var route = routes[parts.pathname];
   // Request and Response come from node's http module.
   //
   // They include information about both the incoming request, such as
@@ -72,3 +76,6 @@ var defaultCorsHeaders = {
 };
 
 exports.handleRequest = requestHandler;
+
+
+// https://app-hrsei-api.herokuapp.com/api/chatterbox/messages/rfe
